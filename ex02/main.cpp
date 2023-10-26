@@ -6,7 +6,7 @@
 /*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 03:06:43 by pszleper          #+#    #+#             */
-/*   Updated: 2023/10/26 04:07:18 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/10/26 04:12:47 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,36 +82,36 @@ int main(void)
 		++itbegin3;
 	}
 
-	// std::cout << "\nLet's prove it works on other types and with other containers too" << std::endl;
-	// MutantStack<std::string, std::vector<std::string> > mstackstring;
-	// mstackstring.push("Hello");
-	// mstackstring.push("world");
-	// mstackstring.push("!");
+	std::cout << "\nLet's prove it works on other types and with other containers too" << std::endl;
+	MutantStack<std::string, std::vector<std::string> > mstackstring;
+	mstackstring.push("Hello");
+	mstackstring.push("world");
+	mstackstring.push("!");
 
-	// std::cout << "\nmstackstring.top() = " << mstackstring.top() << "; mstackstring.size() = " << mstackstring.size() << std::endl;
+	std::cout << "\nmstackstring.top() = " << mstackstring.top() << "; mstackstring.size() = " << mstackstring.size() << std::endl;
 
-	// std::cout << "\nPopping the element" << std::endl;
-	// mstackstring.pop();
+	std::cout << "\nPopping the element" << std::endl;
+	mstackstring.pop();
 
-	// std::cout << "\nmstackstring.top() = " << mstackstring.top() << "; mstackstring.size() = " << mstackstring.size() << std::endl;
+	std::cout << "\nmstackstring.top() = " << mstackstring.top() << "; mstackstring.size() = " << mstackstring.size() << std::endl;
 
-	// std::cout << "\nCreating iterators for beginning and end" << std::endl;
+	std::cout << "\nCreating iterators for beginning and end" << std::endl;
 
-	// MutantStack<std::string>::iterator itstring = mstackstring.begin();
-	// MutantStack<std::string>::iterator itestring = mstackstring.end();
+	MutantStack<std::string, std::vector<std::string> >::iterator itstring = mstackstring.begin();
+	MutantStack<std::string, std::vector<std::string> >::iterator itestring = mstackstring.end();
 
-	// std::cout << "\nTesting increment and decrement of iterator" << std::endl;
+	std::cout << "\nTesting increment and decrement of iterator" << std::endl;
 
-	// ++itstring;
-	// --itstring;
+	++itstring;
+	--itstring;
 
-	// std::cout << "\nTesting iterator functionality" << std::endl;
+	std::cout << "\nTesting iterator functionality" << std::endl;
 
-	// while (itstring != itestring)
-	// {
-	// 	std::cout << *itstring << std::endl;
-	// 	++itstring;
-	// }
+	while (itstring != itestring)
+	{
+		std::cout << *itstring << std::endl;
+		++itstring;
+	}
 
 	return (0);
 }

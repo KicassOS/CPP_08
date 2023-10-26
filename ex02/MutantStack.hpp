@@ -6,7 +6,7 @@
 /*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 03:07:12 by pszleper          #+#    #+#             */
-/*   Updated: 2023/10/26 04:07:07 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/10/26 04:10:46 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ class MutantStack : public std::stack<T, Container>		// inherit from stack as we
 		
 		~MutantStack(void) { }
 
-		typedef typename std::stack<T>::container_type::iterator iterator;
-		iterator	begin() { return this->c.begin(); } // c is a member of the stack class that references the underlying container
-		iterator	end() { return this->c.end(); }
+		typedef typename std::stack<T, Container>::container_type::iterator iterator;
+		iterator	begin() { return static_cast<iterator>(this->c.begin()); } // c is a member of the stack class that references the underlying container
+		iterator	end() { return static_cast<iterator>(this->c.end()); }
 };
 
 #endif
